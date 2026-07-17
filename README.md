@@ -158,19 +158,7 @@ sequenceDiagram
     API-->>UI: JSON response
     UI->>User: Verdict card + radial charts + module breakdown
 ```
-    Fusion->>ML: 30-feature vector [Time, V1–V28, Amount]
-    ML-->>Fusion: {score, verdict}
-    opt Text provided
-        Fusion->>NLP: raw text string
-        NLP-->>Fusion: {score, verdict}
-    end
-    opt Signatures uploaded
-        Fusion->>CV: (ref_path, test_path)
-        CV-->>Fusion: {score, distance, verdict}
-    end
-    Fusion-->>UI: {final_score, verdict, confidence, module_results}
-    UI->>User: Verdict card + confidence ring + score bars
-```
+
 
 ---
 
